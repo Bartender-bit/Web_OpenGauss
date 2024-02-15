@@ -1,0 +1,224 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+a{
+    text-decoration: none;
+}
+.page{
+    height: 1000px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.container-fluid{
+    margin-bottom: 10px;
+}
+li{
+    font-size: 16px;
+}
+
+/* 通用部分 */
+
+
+.alarm{             /* 阅读前谨记 */
+    display: inline-block;
+    /* background-image: url("../../img/圆点素材.jpg"); */
+    background-color: rgb(127, 225, 255);
+    padding-left: 10px;
+    border-radius: 10px;
+}
+.alarm-description{
+    height: 330px;
+    margin-top: 14px;
+    
+    border: 1px dashed rgb(216, 193, 193);
+    border-radius: 10px;
+    padding-top: 24px;
+    background-image: url("../../img/运动器材平铺背景纹理.png");
+}
+.alarm-description>p{
+    margin-bottom: 28px;
+    font-size: 16px;
+}
+
+
+/* 封面 */
+.page-cover{
+    background-color: white;
+    border-style: dashed;
+    border-width: 3px;
+    border-color: yellow;
+
+    background-image:url("../../img/学校.png");
+}
+
+.cover-head{
+    height: 100%;
+    margin-top: 100px;
+    text-align: center;
+}
+.cover-head>h2{
+    font-size: 86px;
+    font-weight: 400;
+}
+ .cover-content{
+    margin-top: 30px;
+}
+.cover-content > h3{
+    text-align: left;
+    margin-top: 48px;
+}
+
+
+/* 引言部分 */
+.page-instruction{
+    background-color: grey;
+    border-style: dashed;
+    border-width: 5px;
+    border-color: yellow;
+    background-image: url("../../img/学校.png");
+}
+.instruction-content>h2{
+    text-align: center;
+    margin-top: 80px;
+    font-size: 56px;
+    font-weight: 250;
+}
+.instruction-content>div{
+    margin-top: 80px;
+}
+.instruction-content>div>p{
+    font-size: 16px;
+}
+.instruction-second{
+    height: 40px;
+    margin-left: 10px;
+}
+.instruction-first{
+    height: 120px;
+}
+.instruction-first>h4{
+    margin-top: 40px;
+}
+
+.instruction-third{
+    height: 430px;
+    padding-top: 20px;
+    
+    /* background-color: powderblue; */
+}
+
+
+
+
+/* 图示页面 */
+.page-chart{
+    background-image: url("../../img/学校.png");
+    /* background-color: aliceblue; */
+    border-style: dashed;
+    border-width: 5px;
+    border-color: yellow;    
+}
+.page-chart-title>h2{
+    text-align: center;
+    font-weight: 500;
+}
+.page-chart-title>p{
+    font-size: 18px;
+    margin-top: 14px;
+}
+.page-chart-result>p{
+    margin-top: 12px;
+    font-size: 18px;
+}
+#six_angle_chart{
+    height: 400px;
+    width: 100%;
+    margin-top: 36px;
+}
+#bar_chart{
+    height: 350px;
+    width: 100%;
+    margin-top: 24px;
+}
+
+
+/* 性格详细测评 */
+.page-hobby{
+    
+    /* background-color: rgb(206, 136, 136); */
+    border-style: dashed;
+    border-width: 5px;
+    border-color: yellow;
+    background-image: url("../../img/学校.png");
+    padding: 10px 20px; 
+}
+.page-hobby>div{
+    margin-bottom: 40px;
+}
+.page-hobby>h2{
+    text-align: center;
+}
+.hobby-describe>h3{
+    font-size: 24px;
+    font-weight: 300;
+}
+.test-list{
+    background-color: rgb(247, 244, 203);
+    border-radius: 10px;
+    padding-left: 4px;
+}
+.test-list>ul,li{
+    list-style-type: square;
+    list-style-position:inside;
+}
+
+.hobby-keywords>h3{
+    font-size: 24px;
+    font-weight: 300;
+}
+.hobby-table{
+    height: 120px;
+}
+.table-tr>td{
+    text-align:center;
+    width: 240px;
+    font-size: 22px;
+}
+
+.hobby-interest>h3{
+    font-size: 24px;
+    font-weight: 300;
+}
+.hobby-work>h3{
+    font-size: 24px;
+    font-weight: 300;
+}
+
+/* 第三兴趣 */
+.page-third-hobby{
+    
+    /* background-color: rgb(206, 136, 136); */
+    border-style: dashed;
+    border-width: 5px;
+    border-color: yellow;
+    padding: 10px 20px;
+    background-image: url("../../img/学校.png"); 
+}
+.page-third-hobby>div{
+    margin-bottom: 16px;
+}
+.page-third-hobby>h2{
+    text-align: center;
+}
+
+.tips{
+    background-color: blanchedalmond;
+    border-radius: 10px;
+    
+}
+.tips>h3{
+    font-size: 20px;
+    font-weight: 400; 
+}
