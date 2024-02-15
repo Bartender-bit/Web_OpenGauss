@@ -1,5 +1,5 @@
 import jaydebeapi
-
+#初始化数据库表
 url = 'jdbc:postgresql://120.46.168.174:26000/db_project'
 user = 'project_maker'
 password = 'user@123456'
