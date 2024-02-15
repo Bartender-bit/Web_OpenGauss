@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/background.css">
+</head>
+<body>
+<div style="background-color:grey;height:1200px;padding-top:100px;">
+<form style="height:800px; width:500px;margin:0px auto;" method="post">
+  <div class="mb-3">
+      {% if chapters %}
+      <h1 style="color:white">第{{chapters[1]}}章: {{chapters[2]}}</h1>
+      <textarea  name="chapter_new_content" style="height:800px; width:500px;margin:100px auto; word-break: break-all;radius:10" >{{chapters[3]}}</textarea>
+      {% endif %}
+  </div>
+  <button type="submit" class="btn btn-primary">修改</button>
+</form>
+</div>
+<div class="content2" style="height:1000px;padding-top:100px">
+
+    </div>
+</body>
+</html>

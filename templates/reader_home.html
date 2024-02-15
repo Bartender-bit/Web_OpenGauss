@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/background.css">
+</head>
+<body>
+  <div class="content2" style="height:1000px;padding-top:20px">
+<div class="reader_home_bg_image">
+<ul class="nav justify-content-center nav-tabs" style="wdith:600px; margin:100px auto">
+  {% if username %}
+  <li class="nav-item">
+    <a class="nav-link active" href="/reader_home/{{username}}" aria-current="page" target="_blank" >个人中心</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/reader_novels_store/{{username}}">书城</a>
+  </li>
+   {% endif %}
+</ul>
+{% if username %}
+<table class="table" style="width:600px;margin:100px auto;">
+  <thead>
+
+    <tr>
+      <th scope="col" style="color:white">书号</th>
+      <th scope="col" style="color:white">书名</th>
+      <th scope="col" style="color:white">是否跳转</th>
+      <th scope="col" style="color:white">{{username}}</th>
+    </tr>
+ {% endif %}
+  </thead>
+  <tbody>
+  {% for book in novels %}
+    <tr>
+      <th scope="row" style="color:white">{{book[2]}}</th>
+      <td style="color:white">{{book[1]}}</td>
+      <td><a href="/reader_to_novel/{{book[2]}}" target="_blank" style="color:white">点我跳转</a></td>
+      {% if username %}
+      <td><a href="/reader_delete_novel/{{book[2]}}/{{username}}" style="color:white">从书库中移除该书</a></td>
+       {% endif %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+</div>
+</body>
+</html>

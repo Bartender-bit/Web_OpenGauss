@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/background.css">
+</head>
+<body>
+<div class="content4" style="height:100%;padding-top:100px">
+
+<ul class="nav justify-content-center nav-tabs" style="wdith:600px; margin:50px auto">
+  {% if username %}
+  <li class="nav-item">
+    <a class="nav-link active" href="/reader_home/{{username}}" aria-current="page" target="_blank">个人中心</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/reader_novels_store/{{username}}">书城</a>
+  </li>
+   {% endif %}
+</ul>
+{% if username %}
+<form class="row" style="magrin: 400px" method="post">
+  <div class="row">
+  <div class="col-4"></div>
+  <div class="col-2">
+    <input type="text" class="form-control" placeholder="书名搜索" aria-label="First name" style="width:200px" name="search_bookname">
+  </div>
+  <div class="col-2">
+    <input type="text" class="form-control" placeholder="作者搜索" aria-label="Last name" style="width:200px" name="search_authorname">
+  </div>
+
+  <div class="col-2">
+    <button type="submit" class="btn btn-primary">搜索</button>
+  </div>
+  <div class="col-2"></div>
+  </div>
+</form>
+<table class="table" style="width:600px;margin:100px auto;">
+  <thead>
+
+    <tr>
+      <th scope="col" style="color:white">书号</th>
+      <th scope="col" style="color:white">书名</th>
+      <th scope="col" style="color:white">作者名字</th>
+      <th scope="col" style="color:white">书类</th>
+      <th scope="col" style="color:white">添加至书架</th>
+    </tr>
+ {% endif %}
+  </thead>
+  <tbody>
+<!--          novel_id serial PRIMARY KEY,0-->
+<!--        novel_name VARCHAR(100) NOT NULL,1-->
+<!--        author_novel_account VARCHAR(15) NOT NULL,2-->
+<!--        author_novel_name VARCHAR(100) NOT NULL,3-->
+<!--        novel_info text NOT NULL DEFAULT '',4-->
+<!--        novel_type VARCHAR(5) CHECK(novel_type>=0 AND novel_type<=6),5-->
+  {% for novel in novels %}
+    <tr>
+      <th scope="row" style="color:white">{{novel[0]}}</th>
+      <td style="color:white">{{novel[1]}}</td>
+      <td style="color:white">{{novel[3]}}</td>
+      <td style="color:white">{{novel[5]}}</td>
+        {% if username %}
+      <td><a href="/reader_add_novel/{{novel[1]}}/{{novel[0]}}/{{username}}" target="_blank" style="color:white">添加此书</a></td>
+        {% endif %}
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+</body>
+</html>

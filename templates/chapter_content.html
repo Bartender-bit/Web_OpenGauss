@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/background.css">
+</head>
+<body>
+<div style="background-color:grey;height:1200px;padding-top:100px;">
+      {% if chapters %}
+      <div style="width:500px;margin:0px auto;">
+      <h1 style="color:white">第{{chapters[1]}}章: {{chapters[2]}}</h1>
+      <textarea  name="chapter_new_content" style="height:800px; width:500px;margin:100px auto; word-break: break-all;radius:10" >{{chapters[3]}}</textarea>
+      </div>
+    {% endif %}
+</div>
+</body>
+</html>

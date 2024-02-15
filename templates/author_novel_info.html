@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/background.css">
+</head>
+<body>
+<div class="content2" style="height:1000px;padding-top:100px">
+{% for content in novels %}
+<div style=" width:800px;margin:0px auto;">
+  <h1 style="color: white;">书名: 《{{content[1]}}》  作者: {{content[3]}}</h1>
+  <br/>
+  <h5 style="color: white;">书简介: <p style="color: white;">{{content[4]}}</p></h5>
+
+
+  <table class="table table-dark table-hover">
+  <thead>
+    <tr>
+      <th scope="col" style="color: white;">章节</th>
+      <th scope="col" style="color: white;">章节标题</th>
+      <th scope="col" style="color: white;">阅读</th>
+      <th scope="col" style="color: white;">修改</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for chapter in chapters %}
+    <tr>
+      <th scope="row">{{chapter[1]}}</th>
+      <td>{{chapter[2]}}</td>
+      <td><a href="/novel_to_chapter/{{content[0]}}/{{chapter[1]}}" target="_blank">点我跳转</a></td>
+      <td><a href="/set_to_novel/{{content[0]}}/{{chapter[1]}}" target="_blank">修改章节</a></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endfor %}</div>
+</body>
+</html>

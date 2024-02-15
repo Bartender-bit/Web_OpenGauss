@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/background.css">
+</head>
+<body>
+<div class="content2" style="height:100% ;padding-top:100px">
+{% if authorname %}
+<h2 style="color: white;margin:20px auto;"align="center">作者: {{authorname}}
+  {% if username %}
+<a href="/write_new_novel/{{authorname}}/{{username}}" target="_blank">开新坑</a>
+  {% endif %}
+{% endif %}
+<table class="table" style="width:600px;margin:0px auto;">
+  <thead>
+
+    <tr>
+      <th scope="col" style="color: white;">书号</th>
+      <th scope="col" style="color: white;">书名</th>
+      <th scope="col" style="color: white;">是否跳转</th>
+      <th scope="col" style="color: white;">更新</th>
+    </tr>
+
+  </thead>
+  <tbody>
+  {% for book in novels %}
+    <tr>
+      <th scope="row" style="color: white;">{{book[0]}}</th>
+      <td style="color: white;">{{book[1]}}</td>
+      <td><a href="/author_to_novel/{{book[0]}}" target="_blank" style="color: white;">点我跳转</a></td>
+        <td><a href="/update_to_novel/{{book[0]}}" target="_blank" style="color: white;">新添章节</a></td>
+
+<!--      <td><a href="" id="toUserIndex">点我跳转</a></td>-->
+      <td></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+</body>
+</html>

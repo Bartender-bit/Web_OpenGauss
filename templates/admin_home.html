@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/css/background.css">
+</head>
+<body>
+{% if username %}
+<div class="content2" style="height:100% ;padding-top:100px">
+    <table class="table" style="width:600px;margin:0px auto;">
+  <thead>
+    <tr>
+      <th scope="col" style="color:white">作者账号</th>
+      <th scope="col" style="color:white">作者笔名</th>
+      <th scope="col" style="color:white">作者密码</th>
+      <th scope="col" style="color:white">是否删除</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for author in authors %}
+    <tr>
+      <th scope="row" style="color:white">{{author[0]}}</th>
+      <td style="color:white">{{author[1]}}</td>
+        <td style="color:white">{{author[2]}}</td>
+      <td><a href="/delete_author/{{author[0]}}/{{username}}" target="_blank" style="color:white">删除该作者</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<table class="table" style="width:600px;margin:0px auto;margin-top:100px">
+  <thead>
+    <tr>
+      <th scope="col" style="color:white">读者</th>
+      <th scope="col" style="color:white">读者密码</th>
+      <th scope="col" style="color:white">是否删除</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for reader in readers %}
+    <tr>
+      <th scope="row" style="color:white">{{reader[0]}}</th>
+      <td style="color:white">{{reader[1]}}</td>
+      <td><a href="/delete_reader/{{reader[0]}}/{{username}}" target="_blank" style="color:white">删除该读者</a></td>
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+</div>
+{% endif %}
+</body>
+<!--<script type="text/javascript">-->
+<!--  $(document).ready(function(){-->
+<!--      var username="[[${username}]]";-->
+<!--      $("#toUserIndex").click(function(){-->
+<!--        $("#toUserIndex").attr("href","/user/index/"+username);-->
+<!--      });-->
+<!--    });-->
+<!--  </script>-->
+</html>
